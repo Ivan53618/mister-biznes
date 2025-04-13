@@ -195,16 +195,26 @@ body{
 h1{
     color: black;
 }
-nav ul {
-    list-style: none;
-    padding: 0px;
+  .navbar {
+    background-color: #f64d91;
     display: flex;
-    gap: 15px;
-    padding-right: 250px;   
-    margin-top: 100px;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-}
+    justify-content: space-around;
+    align-items: center;
+    width: 260px;
+    height: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(246, 77, 145, 0.4);
+  }
+  
+  .icon {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .icon:hover {
+    transform: translateY(-5px);
+    color: #ffe3f0; /* необов'язково – світліший колір при наведенні */
+  }
+  
