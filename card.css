@@ -176,45 +176,95 @@ body{
 
     }
     
-    h1{
-        font-size: 75px;
-    }
+h1{
+    font-size: 75px;
+}
     button{
-        padding: 20px 50px;
-        outline: none;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 15px;
-        letter-spacing: 2px;
-        box-shadow: 0px 5px 10px #000;
-        margin-top: 0px;
-        margin-right: -1600px;
+    padding: 20px 50px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 2px;
+    box-shadow: 0px 5px 10px #000;
+    margin-top: 0px;
+    margin-right: 0px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px; 
     }
 h1{
     color: black;
 }
   .navbar {
-    background-color: #f64d91;
+    background-color: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 260px;
     height: 60px;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(246, 77, 145, 0.4);
-  }
+    box-shadow: 0 10px 20px black(246, 77, 145, 0.4);
+}
   
-  .icon {
+.icon {
     color: white;
     font-size: 20px;
     transition: transform 0.2s ease, color 0.2s ease;
     cursor: pointer;
-  }
+}
   
-  .icon:hover {
+.icon:hover {
     transform: translateY(-5px);
-    color: #ffe3f0; /* необов'язково – світліший колір при наведенні */
-  }
+    color: white;
+}
+h2{
+    color: black;
+    font-size: 65px
+}
+.game-button{
+    background-color: blue;
+    color: white; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Сяйво */
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 400px;
+    margin-right: 1700px;
+}
   
+.game-button:hover {
+    background-color: darkblue; 
+}
+h3{
+    color: black;
+    font-size: 40px;
+}
+.csgo-button{
+    background-color: #2D2C35;
+    color: white; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 15px;
+    box-shadow: 0 0 10px #2D2C35(0, 0, 255, 0.5); /* Сяйво */
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 400px;
+    margin-right: 1400px;
+}
+  
+.csgo-button:hover {
+    background-color: black; 
+}
+h4{
+    color: black; 
+    font-size: 35px;
+}
