@@ -3,76 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Spin - Головна</title>
+    <title>GameZone | Для справжніх геймерів</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <header class="main-header">
         <div class="logo">
-            <span class="logo-text">Lucky</span>
-            <span class="logo-spin">Spin</span>
+            <span>Game</span><span>Zone</span>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Головна</a></li>
-                <li><a href="slots.html">Слоти</a></li>
-                <li><a href="roulette.html">Рулетка</a></li>
-                <li><a href="poker.html">Покер</a></li>
-                <li><a href="contacts.html">Контакти</a></li>
+                <li><a href="games.html">Ігри</a></li>
+                <li><a href="rating.html">Топ гравців</a></li>
+                <li><a href="profile.html">Мій акаунт</a></li>
             </ul>
         </nav>
-        <div class="auth-buttons">
-            <button class="btn login-btn">Увійти</button>
-            <button class="btn register-btn">Реєстрація</button>
+        <div class="user">
+            <span id="username">Гість</span>
+            <div class="avatar" id="user-avatar">👤</div>
         </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Відчуй азарт з <span>Lucky Spin</span></h1>
-                <p>Найкращі ігрові автомати, рулетка та покерні турніри</p>
-                <button class="btn play-now">Грати зараз</button>
+                <h1>Твій ігровий простір</h1>
+                <p>Грай, змагайся та покращуй свої навички</p>
+                <a href="games.html" class="cta-button">До ігор</a>
             </div>
-            <div class="hero-slots">
-                <div class="slot-reel" id="reel1">7</div>
-                <div class="slot-reel" id="reel2">7</div>
-                <div class="slot-reel" id="reel3">7</div>
-            </div>
-        </section>
-
-        <section class="games-preview">
-            <h2>Наші ігри</h2>
-            <div class="games-grid">
-                <div class="game-card" onclick="location.href='slots.html'">
-                    <div class="game-icon slots-icon"></div>
-                    <h3>Ігрові автомати</h3>
-                    <p>Понад 100 унікальних слотів</p>
-                </div>
-                <div class="game-card" onclick="location.href='roulette.html'">
-                    <div class="game-icon roulette-icon"></div>
-                    <h3>Рулетка</h3>
-                    <p>Класична та сучасна версії</p>
-                </div>
-                <div class="game-card" onclick="location.href='poker.html'">
-                    <div class="game-icon poker-icon"></div>
-                    <h3>Покер</h3>
-                    <p>Турніри та гроші наживо</p>
-                </div>
+            <div class="hero-image">
+                <div class="game-preview" id="preview1">🎮</div>
+                <div class="game-preview" id="preview2">🕹️</div>
+                <div class="game-preview" id="preview3">👾</div>
             </div>
         </section>
 
-        <section class="jackpot-counter">
-            <h2>Джекпот</h2>
-            <div class="counter" id="jackpot">1,234,567 $</div>
-            <p>Хтось виграє ці гроші сьогодні!</p>
+        <section class="features">
+            <h2>Чому саме наш сайт?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Система рейтингу</h3>
+                    <p>Змагайся з друзями за перше місце</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Безпечно</h3>
+                    <p>Жодних реальних ставок - тільки ігри</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>На будь-якому пристрої</h3>
+                    <p>Грай на комп'ютері чи телефоні</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2023 Lucky Spin. Всі права захищені.</p>
-        <div class="age-warning">18+</div>
+        <div class="footer-content">
+            <p>© 2025 GameZone. Усі права захищені.</p>
+            <p>Сайт створено для навчання та розваги</p>
+        </div>
+        <div class="age-badge">12+</div>
     </footer>
 
     <script src="main.js"></script>

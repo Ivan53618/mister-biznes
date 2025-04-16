@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій акаунт | GameZone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="games.html">Ігри</a></li>
+                <li><a href="rating.html">Топ гравців</a></li>
+                <li><a href="profile.html">Мій акаунт</a></li>
+            </ul>
+        </nav>    </header>
+
+    <main class="profile-main">
+        <h1>Мій акаунт</h1>
+        
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="avatar-selector">
+                    <div class="current-avatar" id="current-avatar">👤</div>
+                    <div class="avatar-options">
+                        <div class="avatar-option" data-emoji="👦">👦</div>
+                        <div class="avatar-option" data-emoji="👧">👧</div>
+                        <div class="avatar-option" data-emoji="🧑">🧑</div>
+                        <div class="avatar-option" data-emoji="👩">👩</div>
+                        <div class="avatar-option" data-emoji="🤓">🤓</div>
+                        <div class="avatar-option" data-emoji="🎮">🎮</div>
+                        <div class="avatar-option" data-emoji="🕹️">🕹️</div>
+                        <div class="avatar-option" data-emoji="👾">👾</div>
+                    </div>
+                </div>
+                
+                <div class="profile-info">
+                    <div class="form-group">
+                        <label for="username">Ім'я гравця:</label>
+                        <input type="text" id="username-input" maxlength="20">
+                    </div>
+                    
+                    <button class="save-button" id="save-profile">Зберегти зміни</button>
+                </div>
+            </div>
+            
+            <div class="stats-card">
+                <h2>Моя статистика</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>Космічні перегони</h3>
+                        <div class="stat-value" id="space-stat">0</div>
+                        <div class="stat-label">Найкращий результат</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <h3>Емодзі-пазл</h3>
+                        <div class="stat-value" id="emoji-stat">0</div>
+                        <div class="stat-label">Найкращий результат</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <h3>Загалом ігор</h3>
+                        <div class="stat-value" id="total-games">0</div>
+                        <div class="stat-label">Всього зіграно</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <h3>Дата реєстрації</h3>
+                        <div class="stat-value" id="reg-date">-</div>
+                        <div class="stat-label">Перший візит</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievements-card">
+                <h2>Мої досягнення</h2>
+                
+                <div class="achievements-grid" id="achievements-grid">
+                    <!-- Тут будуть досягнення -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 GameZone. Усі права захищені.</p>
+            <p>Сайт створено для навчання та розваги</p>
+        </div>
+        <div class="age-badge">12+</div>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+</html>

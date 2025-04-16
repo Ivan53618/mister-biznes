@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ігри | GameZone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="games.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="games.html">Ігри</a></li>
+                <li><a href="rating.html">Топ гравців</a></li>
+                <li><a href="profile.html">Мій акаунт</a></li>
+            </ul>
+        </nav>    </header>
+
+    <main class="games-main">
+        <h1>Обери гру</h1>
+        
+        <div class="games-grid">
+            <div class="game-card" data-game="space-race">
+                <div class="game-thumbnail">
+                    <div class="game-icon">🚀</div>
+                </div>
+                <div class="game-info">
+                    <h2>Космічні перегони</h2>
+                    <p>Обганяй суперників у космосі</p>
+                    <div class="game-stats">
+                        <span>🏆 Топ: <span id="space-top">0</span></span>
+                        <span>⭐ Твій рекорд: <span id="space-user">0</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="emoji-match">
+                <div class="game-thumbnail">
+                    <div class="game-icon">🧩</div>
+                </div>
+                <div class="game-info">
+                    <h2>Емодзі-пазл</h2>
+                    <p>Знаходь пари однакових смайлів</p>
+                    <div class="game-stats">
+                        <span>🏆 Топ: <span id="emoji-top">0</span></span>
+                        <span>⭐ Твій рекорд: <span id="emoji-user">0</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card" data-game="guess-number">
+                <div class="game-thumbnail">
+                    <div class="game-icon">🔢</div>
+                </div>
+                <div class="game-info">
+                    <h2>Вгадай число</h2>
+                    <p>Загадай число від 0 до 100 і спробуй вгадати!</p>
+                    <div class="game-stats">
+                        <span>🏆 Топ: <span id="guess-top">0</span></span>
+                        <span>⭐ Твій рекорд: <span id="guess-user">0</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="game-screen hidden" id="game-screen">
+            <div class="game-container" id="game-container"></div>
+            <button class="back-button">← До всіх ігор</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 GameZone. Усі права захищені.</p>
+            <p>Сайт створено для навчання та розваги</p>
+        </div>
+        <div class="age-badge">12+</div>
+    </footer>
+
+    <script src="games.js"></script>
+</body>
+</html>

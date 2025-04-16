@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рейтинг | GameZone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="games.html">Ігри</a></li>
+                <li><a href="rating.html">Топ гравців</a></li>
+                <li><a href="profile.html">Мій акаунт</a></li>
+            </ul>
+        </nav>    
+    </header>
+
+    <main class="rating-main">
+        <h1>Топ гравців</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-game="space-race">Космічні перегони</button>
+            <button class="tab-btn" data-game="emoji-match">Емодзі-пазл</button>
+        </div>
+        
+        <div class="leaderboard">
+            <div class="table-header">
+                <span>#</span>
+                <span>Гравець</span>
+                <span>Рекорд</span>
+                <span>Дата</span>
+            </div>
+            <div class="table-body" id="leaderboard-body">
+                <!-- Тут будуть результати -->
+            </div>
+        </div>
+        
+        <div class="personal-best">
+            <h2>Твої найкращі результати</h2>
+            <div class="personal-stats">
+                <div class="stat-card">
+                    <h3>Космічні перегони</h3>
+                    <div class="stat-value" id="user-space">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Емодзі-пазл</h3>
+                    <div class="stat-value" id="user-emoji">0</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 GameZone. Усі права захищені.</p>
+            <p>Сайт створено для навчання та розваги</p>
+        </div>
+        <div class="age-badge">12+</div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

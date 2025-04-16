@@ -1,98 +1,152 @@
-// Анімація слотів на головній сторінці
+// Ініціалізація даних гравця
 document.addEventListener('DOMContentLoaded', function() {
-    // Анімація головних слотів
-    if (document.getElementById('reel1')) {
-        const reels = [
-            document.getElementById('reel1'),
-            document.getElementById('reel2'),
-            document.getElementById('reel3')
-        ];
-        
-        const symbols = ['7', '🍒', '🍋', '🍊', '⭐', '💰'];
-        
-        function spinReel(reel) {
-            let spins = 0;
-            const maxSpins = 10 + Math.floor(Math.random() * 10);
-            const spinInterval = setInterval(() => {
-                reel.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-                spins++;
-                
-                if (spins >= maxSpins) {
-                    clearInterval(spinInterval);
-                    // 30% шанс на виграшну комбінацію
-                    if (Math.random() < 0.3) {
-                        reel.textContent = '7';
-                    }
-                }
-            }, 100);
+    // Перевіряємо, чи є збережені дані гравця
+    if (!localStorage.getItem('gamezone_username')) {
+        const username = prompt("Привіт! Як до тебе звертатися?", "Гравець");
+        if (username) {
+            localStorage.setItem('gamezone_username', username.trim());
+        } else {
+            localStorage.setItem('gamezone_username', "Гравець");
         }
+    }
+
+    // Встановлюємо ім'я та аватар
+    document.getElementById('username').textContent = localStorage.getItem('gamezone_username');
+    
+    // Генеруємо випадковий аватар
+    const avatars = ['👦', '👧', '🧑', '👩', '🤓', '🎮', '🕹️', '👾'];
+    const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
+    document.getElementById('user-avatar').textContent = randomAvatar;
+    
+    // Завантажуємо рейтинг на сторінці рейтингу
+    if (document.querySelector('.leaderboard')) {
+        loadLeaderboard('space-race');
         
-        // Автоматичне крутіння кожні 5 секунд
-        setInterval(() => {
-            reels.forEach(reel => spinReel(reel));
-        }, 5000);
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                loadLeaderboard(this.dataset.game);
+            });
+        });
         
-        // Початкове крутіння
-        setTimeout(() => {
-            reels.forEach(reel => spinReel(reel));
-        }, 1000);
+        // Завантажуємо особисті рекорди
+        loadPersonalBests();
     }
     
-    // Анімація джекпоту
-    if (document.getElementById('jackpot')) {
-        const jackpotElement = document.getElementById('jackpot');
-        let jackpotValue = 1234567;
-        
-        setInterval(() => {
-            // Випадкове збільшення джекпоту
-            const increase = Math.floor(Math.random() * 100);
-            jackpotValue += increase;
-            
-            // Форматування з комами
-            jackpotElement.textContent = jackpotValue.toLocaleString('en-US') + ' $';
-            
-            // Випадкова анімація
-            if (Math.random() < 0.1) {
-                jackpotElement.style.animation = 'none';
-                void jackpotElement.offsetWidth; // Trigger reflow
-                jackpotElement.style.animation = 'pulse 0.5s, glow 1s';
-            }
-        }, 3000);
+    // Завантажуємо статистику на сторінці ігор
+    if (document.querySelector('.games-grid')) {
+        loadGameStats();
     }
-    
-    // Плавний скрол для навігаційних посилань
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            } else {
-                window.location.href = targetId;
-            }
-        });
-    });
-    
-    // FAQ акордеон
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const icon = question.querySelector('.toggle-icon');
-            
-            if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-                icon.textContent = '+';
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.textContent = '-';
-            }
-        });
-    });
+
+    // Встановлюємо ім'я та аватар
+document.getElementById('username').textContent = localStorage.getItem('gamezone_username') || "Гравець";
+const savedAvatar = localStorage.getItem('gamezone_avatar');
+if (savedAvatar) {
+    document.getElementById('user-avatar').textContent = savedAvatar;
+} else {
+    const avatars = ['👦', '👧', '🧑', '👩', '🤓', '🎮', '🕹️', '👾'];
+    const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
+    document.getElementById('user-avatar').textContent = randomAvatar;
+    localStorage.setItem('gamezone_avatar', randomAvatar);
+}
+
 });
+
+function loadLeaderboard(gameType) {
+    const leaderboardBody = document.getElementById('leaderboard-body');
+    leaderboardBody.innerHTML = '';
+    
+    // Отримуємо рейтинг з localStorage
+    let ratings = JSON.parse(localStorage.getItem(`gamezone_${gameType}_ratings`)) || [];
+    
+    // Сортуємо за спаданням
+    ratings.sort((a, b) => b.score - a.score);
+    
+    // Додаємо до таблиці
+    ratings.slice(0, 10).forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = 'leaderboard-item';
+        
+        row.innerHTML = `
+            <span>${index + 1}</span>
+            <span>${item.name}</span>
+            <span>${item.score}</span>
+            <span>${new Date(item.date).toLocaleDateString()}</span>
+        `;
+        
+        leaderboardBody.appendChild(row);
+    });
+    
+    // Якщо немає результатів
+    if (ratings.length === 0) {
+        const noResults = document.createElement('div');
+        noResults.className = 'leaderboard-item';
+        noResults.innerHTML = '<span colspan="4" style="grid-column: 1 / -1; text-align: center;">Ще немає результатів. Будь першим!</span>';
+        leaderboardBody.appendChild(noResults);
+    }
+}
+
+function loadPersonalBests() {
+    const username = localStorage.getItem('gamezone_username');
+    
+    // Космічні перегони
+    let spaceRatings = JSON.parse(localStorage.getItem('gamezone_space-race_ratings')) || [];
+    let userSpaceBest = spaceRatings.filter(r => r.name === username).sort((a, b) => b.score - a.score)[0];
+    document.getElementById('user-space').textContent = userSpaceBest ? userSpaceBest.score : '0';
+    
+    // Емодзі-пазл
+    let emojiRatings = JSON.parse(localStorage.getItem('gamezone_emoji-match_ratings')) || [];
+    let userEmojiBest = emojiRatings.filter(r => r.name === username).sort((a, b) => b.score - a.score)[0];
+    document.getElementById('user-emoji').textContent = userEmojiBest ? userEmojiBest.score : '0';
+}
+
+function loadGameStats() {
+    const username = localStorage.getItem('gamezone_username');
+    
+    // Космічні перегони
+    let spaceRatings = JSON.parse(localStorage.getItem('gamezone_space-race_ratings')) || [];
+    let spaceTop = spaceRatings.sort((a, b) => b.score - a.score)[0];
+    document.getElementById('space-top').textContent = spaceTop ? spaceTop.score : '0';
+    
+    let userSpaceBest = spaceRatings.filter(r => r.name === username).sort((a, b) => b.score - a.score)[0];
+    document.getElementById('space-user').textContent = userSpaceBest ? userSpaceBest.score : '0';
+    
+    // Емодзі-пазл
+    let emojiRatings = JSON.parse(localStorage.getItem('gamezone_emoji-match_ratings')) || [];
+    let emojiTop = emojiRatings.sort((a, b) => b.score - a.score)[0];
+    document.getElementById('emoji-top').textContent = emojiTop ? emojiTop.score : '0';
+    
+    let userEmojiBest = emojiRatings.filter(r => r.name === username).sort((a, b) => b.score - a.score)[0];
+    document.getElementById('emoji-user').textContent = userEmojiBest ? userEmojiBest.score : '0';
+    // Вгадай число
+    let guessRatings = JSON.parse(localStorage.getItem('gamezone_guess-number_ratings')) || [];
+    let guessTop = guessRatings.sort((a, b) => b.score - a.score)[0];
+    document.getElementById('guess-top').textContent = guessTop ? guessTop.score : '0';
+    
+    let userGuessBest = guessRatings.filter(r => r.name === username).sort((a, b) => b.score - a.score)[0];
+    document.getElementById('guess-user').textContent = userGuessBest ? userGuessBest.score : '0';
+}
+
+function saveGameResult(gameType, score) {
+    const username = localStorage.getItem('gamezone_username') || "Гравець";
+    let ratings = JSON.parse(localStorage.getItem(`gamezone_${gameType}_ratings`)) || [];
+    
+    ratings.push({
+        name: username,
+        score: score,
+        date: new Date().toISOString()
+    });
+    
+    localStorage.setItem(`gamezone_${gameType}_ratings`, JSON.stringify(ratings));
+    
+    // Оновлюємо статистику на сторінках
+    if (document.querySelector('.leaderboard')) {
+        loadLeaderboard(gameType);
+        loadPersonalBests();
+    }
+    
+    if (document.querySelector('.games-grid')) {
+        loadGameStats();
+    }
+}
