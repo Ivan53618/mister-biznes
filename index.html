@@ -1,122 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="card.css">
-    <title></title>
+    <title>Lucky Spin - Головна</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
 </head>
-<main>
-
-</main>
-<header>
-    
-</header>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="games.html">Ігри</a></li>
-            <li><a href="bonuses.html">Бонуси</a></li>
-            <li><a href="contacts.html">Контакти</a></li>
-        </ul>
-    </nav>
-    <button type="button" onclick="location.href='page.html'">Увійти в акаунт</button>
-<h1>mister biznes</h1>
-<div class="container">
+    <header class="main-header">
+        <div class="logo">
+            <span class="logo-text">Lucky</span>
+            <span class="logo-spin">Spin</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="slots.html">Слоти</a></li>
+                <li><a href="roulette.html">Рулетка</a></li>
+                <li><a href="poker.html">Покер</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn login-btn">Увійти</button>
+            <button class="btn register-btn">Реєстрація</button>
+        </div>
+    </header>
 
-    <div class="card-container">
-
-        <div class="front">
-            <div class="image">
-                <img src="image/chip.png" alt="">
-                <img src="image/visa.png" alt="">
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Відчуй азарт з <span>Lucky Spin</span></h1>
+                <p>Найкращі ігрові автомати, рулетка та покерні турніри</p>
+                <button class="btn play-now">Грати зараз</button>
             </div>
-            <div class="card-number-box">################</div>
-            <div class="flexbox">
-                <div class="box">
-                    <span>Власник картки</span>
-                    <div class="card-holder-name">Повне ім'я</div>
+            <div class="hero-slots">
+                <div class="slot-reel" id="reel1">7</div>
+                <div class="slot-reel" id="reel2">7</div>
+                <div class="slot-reel" id="reel3">7</div>
+            </div>
+        </section>
+
+        <section class="games-preview">
+            <h2>Наші ігри</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="location.href='slots.html'">
+                    <div class="game-icon slots-icon"></div>
+                    <h3>Ігрові автомати</h3>
+                    <p>Понад 100 унікальних слотів</p>
                 </div>
-                <div class="box">
-                    <span>Закінчення</span>
-                    <div class="expiration">
-                        <span class="exp-month">mm</span>
-                        <span class="exp-year">yy</span>
-                    </div>
+                <div class="game-card" onclick="location.href='roulette.html'">
+                    <div class="game-icon roulette-icon"></div>
+                    <h3>Рулетка</h3>
+                    <p>Класична та сучасна версії</p>
+                </div>
+                <div class="game-card" onclick="location.href='poker.html'">
+                    <div class="game-icon poker-icon"></div>
+                    <h3>Покер</h3>
+                    <p>Турніри та гроші наживо</p>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <section class="jackpot-counter">
+            <h2>Джекпот</h2>
+            <div class="counter" id="jackpot">1,234,567 $</div>
+            <p>Хтось виграє ці гроші сьогодні!</p>
+        </section>
+    </main>
 
-        <div class="back">
-            <div class="stripe"></div>
-            <div class="box">
-                <span>cvv</span>
-                <div class="cvv-box"></div>
-                <img src="image/visa.png" alt="">
-            </div>
-        </div>
+    <footer>
+        <p>© 2023 Lucky Spin. Всі права захищені.</p>
+        <div class="age-warning">18+</div>
+    </footer>
 
-    </div>
-
-    <form action="">
-        <div class="inputBox">
-            <span>Номер картки</span>
-            <input type="text" maxlength="16" class="card-number-input">
-        </div>
-        <div class="inputBox">
-            <span>Власник картки</span>
-            <input type="text" class="card-holder-input">
-        </div>
-        <div class="flexbox">
-            <div class="inputBox">
-                <span>Закінчення мм</span>
-                <select name="" id="" class="month-input">
-                    <option value="month" selected disabled>Місяць</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-            </div>
-            <div class="inputBox">
-                <span>Закінчення мм</span>
-                <select name="" id="" class="year-input">
-                    <option value="year" selected disabled>Рік</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                    <option value="2029">2029</option>
-                    <option value="2030">2030</option>
-                </select>
-            </div>
-            <div class="inputBox">
-                <span>cvv</span>
-                <input type="text" maxlength="4" class="cvv-input">
-            </div>
-        </div>
-        <input type="submit" value="submit" class="submit-btn">
-    </form>
-
-</div>    
-<script src="index.js"></script>      
+    <script src="main.js"></script>
 </body>
-<footer>
-
-</footer>
 </html>
