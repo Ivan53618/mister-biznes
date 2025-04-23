@@ -244,6 +244,9 @@ h2{
 h3{
     color: black;
     font-size: 40px;
+    margin-top: 10px; /* можна налаштувати */
+    font-size: 24px;
+    font-weight: bold;
 }
 .csgo-button{
     background-color: #2D2C35;
@@ -267,7 +270,7 @@ h4{
     font-size: 35px;
 }
 p{
-    margin-top: 590px;
+    margin-bottom: 666px;
 }
 p:hover{
     color:underline;
@@ -290,4 +293,39 @@ p:hover{
 
 .icon.bonus:hover i {
     color: #ff9800;
+}
+.hero-slots {
+    display: flex;
+    gap: 1rem;
+    background-color: #1a1a2e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+    margin-left: 1500px;
+    margin-top: 300px;
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+    bottom: 333px;
+}
+.slot-reel {
+    width: 80px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1a1a2e;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
 }
