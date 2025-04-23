@@ -24,15 +24,6 @@ body {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #23242a;
-    overflow: hidden;
-}
 .box {
     position: relative;
     width: 380px;

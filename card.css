@@ -171,9 +171,7 @@ body{
     font-family: Georgia, serif;
     text-align: center;
     margin: 15px;
-    background: white;
-    color: white;
-
+    color: #000;
     }
     
 h1{
@@ -224,7 +222,7 @@ h1{
 }
 h2{
     color: black;
-    font-size: 65px
+    font-size: 65px;
 }
 .game-button{
     background-color: blue;
@@ -267,4 +265,29 @@ h3{
 h4{
     color: black; 
     font-size: 35px;
+}
+p{
+    margin-top: 590px;
+}
+p:hover{
+    color:underline;
+}
+/* Анімація при наведенні */
+.icon:hover {
+    transform: translateY(-10px);
+}
+
+.icon:hover i {
+    color: orange;
+    transform: scale(1.2);
+}
+
+/* Додаткові ефекти для бонусної іконки */
+.icon.bonus:hover {
+    animation: bounce 0.5s ease;
+    background-color: #ffeb3b;
+}
+
+.icon.bonus:hover i {
+    color: #ff9800;
 }
