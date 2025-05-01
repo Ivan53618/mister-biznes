@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+}
+
+.icon {
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: yellow;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hero-slots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slot-reel {
+    background-color: black;
+    border: 2px solid gold;
+    padding: 20px;
+    margin: 0 10px;
+    font-size: 32px;
+}
