@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Статистика</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fire.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="spacer"></div>
+    
+            <div class="navbar"> 
+                <div class="icon" onclick="location.href='index.html'"><i class="fas fa-home"></i></div> 
+                <div class="icon" onclick="location.href='fire.html'"><i class="fas fa-fire"></i></div> 
+                <div class="icon" onclick="location.href='game.html'"><i class="fas fa-gamepad"></i></div> 
+                <div class="icon" onclick="location.href='file.html'"><i class="fas fa-file-alt"></i></div> 
+                <div class="icon" onclick="location.href='gift.html'"><i class="fas fa-gift"></i></div> 
+            </div> 
+    
+            <div class="login-container">
+                <button class="login-button" onclick="location.href='login.html'">Увійти в акаунт</button>
+            </div>
+        </div>
+    </header>
+  <main>
+    <h1>Статистика гравця</h1>
+    <p>Загальна кількість монет: <span id="coins">0</span></p>
+    <p>Усього виграно монет: <span id="earned">0</span></p>
+    <p>Усього програно монет: <span id="lost">0</span></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Казино Онлайн. Всі права захищені.</p>
+</footer>
+  <script src = "fire.js"></script>
+</body>
+</html>
