@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
-    color:#9be81f;
     font-size: 14px;
 }
 
@@ -14,16 +13,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: 23242a;
+    background: #23242a;
+    overflow: hidden;
 }
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-}
 .box {
     position: relative;
     width: 380px;
@@ -33,18 +26,7 @@ body {
     overflow: hidden;
 }
 
-.box::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(0deg, transparent, #1fe851, #1fe83a);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-}
-
+.box::before,
 .box::after {
     content: "";
     position: absolute;
@@ -52,9 +34,16 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #9be81f, #e8981f);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
+}
+
+.box::before {
+    background: linear-gradient(0deg, transparent, #1fe851, #1fe83a);
+}
+
+.box::after {
+    background: linear-gradient(0deg, transparent, #9be81f, #e8981f);
     animation-delay: -3s;
 }
 
@@ -66,6 +55,7 @@ body {
         transform: rotate(360deg);
     }
 }
+
 .form {
     position: absolute;
     inset: 2px;
@@ -85,81 +75,76 @@ body {
     letter-spacing: 0.1em;
 }
 
-.form .input {
+.input {
     text-align: left;
 }
 
-.form .input .inputBox {
-    margin-top: 10px;
+.inputBox {
+    margin-top: 20px;
 }
 
-.form .input .inputBox label {
+.inputBox label {
     display: block;
     color: #fff;
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 1px;
 }
 
-.form .input .inputBox input {
-    position: relative;
+.inputBox input {
     width: 100%;
     height: 40px;
-    border: 2px solid #e9dcle;
+    border: 2px solid #ccc;
     outline: none;
     padding: 5px 15px;
     background: transparent;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 50px;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.form .input inputBox input:hover {
-    border-color: #f1e430; /* Змінює колір рамки при наведенні курсору */
-    box-shadow: 0px 0px 10px 5px rgba(233, 220, 30, 0.5); /* Додає тінь, що виглядає як світіння */
+
+.inputBox input:hover {
+    border-color: #f1e430;
+    box-shadow: 0px 0px 10px 5px rgba(233, 220, 30, 0.5);
 }
 
-.form .input inputBox input[type="submit"] {
+.inputBox input[type="submit"] {
     cursor: pointer;
     margin-top: 20px;
-    letter-spacing: 1px;
-    position: relative;
-    width: 100%;
-    height: 40px;
     border: none;
-    outline: none;
-    padding: 5px 15px;
-    background: #e9dcle;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 800;
-    border-radius: 50px;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.form .input inputBox input[type="submit"]:hover {
-    background: linear-gradient(315deg, #c8ff02, #e9a2le);
-}
-
-.form .input inputBox input[type="submit"]:active {
-    color: rgba(255, 255, 255, 0.521);
     background: #c8ff02;
+    color: #000;
+    font-weight: 800;
+    transition: background 0.3s ease;
+}
+
+.inputBox input[type="submit"]:hover {
+    background: linear-gradient(315deg, #c8ff02, #e9a21e);
+}
+
+.inputBox input[type="submit"]:active {
+    background: #a1cc00;
+    color: #fff;
 }
 
 .forgot {
-    margin-top: -65px;
+    margin-top: 15px;
     color: #fff;
     font-size: 14px;
-    letter-spacing: 1px;
+    text-align: center;
 }
 
 .forgot a {
     color: #9be81f;
+    text-decoration: none;
 }
-.eblan{
+
+.eblan {
     margin-top: 20px;
-}    
-.forpot{
+}
+
+.forpot {
     margin-top: 50px;
-    color:white ;
+    color: white;
 }
