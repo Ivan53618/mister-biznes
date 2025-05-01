@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fefefe;
+    background-color: #1e1e1e;
     margin: 0;
     padding: 0;
   }
@@ -9,7 +9,7 @@ body {
     max-width: 600px;
     margin: 80px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #4a4a4a;
     border-radius: 8px;
     text-align: center;
   }
@@ -22,5 +22,31 @@ body {
   main p {
     font-size: 18px;
     margin: 10px 0;
+  }
+  .coin-animation {
+    font-size: 50px;
+    animation: bounce 1s infinite alternate, glow 1.5s infinite alternate;
+    position: relative; /* Було fixed */
+    margin: 0 auto 20px; /* Центрує по горизонталі та дає відступ вниз */
+    display: inline-block;
+  }
+  
+  
+  @keyframes bounce {
+    from {
+      transform: translateX(-50%) translateY(0);
+    }
+    to {
+      transform: translateX(-50%) translateY(-20px);
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px gold, 0 0 10px orange;
+    }
+    to {
+      text-shadow: 0 0 20px gold, 0 0 30px orange;
+    }
   }
   
